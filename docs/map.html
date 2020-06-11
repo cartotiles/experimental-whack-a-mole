@@ -70,11 +70,12 @@ map.on('load', function() {
   map.addControl(new mapboxgl.NavigationControl())
 })
 map.on('click', 'bnda', function(e) {
+  console.log(e.features[0])
+  var html = "<h1>" + e.features[0].maplab + "</h1><img src='https://ubukawa.github.io/cartotile_trial/stat_data/graph/1.1.1_Angola.png'>"
   new mapboxgl.Popup()
     .setLngLat(e.lngLat)
-    .setHTML("aaa")
+    .setHTML(html)
     .addTo(map)
-  //document.getElementById("graph").src = "https://ubukawa.github.io/cartotile_trial/stat_data/graph/1.1.1_Angola.png"
 })
 </script>
 </body>
