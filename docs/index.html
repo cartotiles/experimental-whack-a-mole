@@ -39,35 +39,28 @@ map = new mapboxgl.Map({
         source: 'v',
         'source-layer': 'bnda',
         paint: {
-          'fill-color': ['rgb', 250, 250, 250]
-        }
-      },
-      {
-        id: 'text',
-        type: 'symbol',
-        source: 'v',
-        'source-layer': 'bnda',
-        layout: {
-          'text-field': [
-            'step',
-            ['zoom'],
-            ['get', 'iso2cd'],
-            2,
-            ['get', 'iso3cd'],
-            4,
-            ['get', 'maplab']
-          ],
-          'text-font': ['NotoSansCJKjp-Regular'],
-          'text-size': [
-            'step',
-            ['zoom'],
-            9,
-            1,
-            14
-          ],
-          'text-allow-overlap': true
-        },
-        paint: {
+          'fill-color': [
+            'match',
+            [
+              'get',
+              'iso2cd'
+            ],
+            [
+              'us'
+            ],
+            [
+              'rgb',
+              255,
+              255,
+              0
+            ],
+            [
+              'rgb',
+              250,
+              250,
+              250
+            ]
+          ]
         }
       }
     ]
