@@ -8,6 +8,7 @@
 <style>
 body { margin: 0; top: 0; bottom: 0; width: 100%; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+.mapbox-popup { max-width: 640px }
 </style>
 <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js"></script>
 </head>
@@ -71,7 +72,8 @@ map.on('load', function() {
 })
 map.on('click', 'bnda', function(e) {
   console.log(e.features[0])
-  var html = "<h1>" + e.features[0].maplab + "</h1><img src='https://ubukawa.github.io/cartotile_trial/stat_data/graph/1.1.1_Angola.png'>"
+  var html = "<h2>" + e.features[0].properties.maplab + 
+    "</h2><img src='https://ubukawa.github.io/cartotile_trial/stat_data/graph/1.1.1_Angola.png'>"
   new mapboxgl.Popup()
     .setLngLat(e.lngLat)
     .setHTML(html)
