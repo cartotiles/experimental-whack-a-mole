@@ -13,7 +13,6 @@ body { margin: 0; top: 0; bottom: 0; width: 100%; }
 </head>
 <body>
 <div id="map"></div>
-<img id="graph" style="margin-bottom: 0px" src="https://ubukawa.github.io/cartotile_trial/stat_data/graph/1.1.1_Albania.png">
 <script>
 map = new mapboxgl.Map({
   container: 'map', 
@@ -71,8 +70,11 @@ map.on('load', function() {
   map.addControl(new mapboxgl.NavigationControl())
 })
 map.on('click', 'bnda', function(e) {
-  console.log(e.features[0])
-  document.getElementById("graph").src = "https://ubukawa.github.io/cartotile_trial/stat_data/graph/1.1.1_Angola.png"
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML("aaa")
+    .addTo(map)
+  //document.getElementById("graph").src = "https://ubukawa.github.io/cartotile_trial/stat_data/graph/1.1.1_Angola.png"
 })
 </script>
 </body>
