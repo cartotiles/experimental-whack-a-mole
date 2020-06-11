@@ -72,7 +72,7 @@ map.on('load', function() {
 })
 map.on('click', 'bnda', function(e) {
   console.log(e.features[0])
-  var html = "<h2>" + e.features[0].properties.SOVREINGT + 
+  var html = "<h2>" + e.features[0].properties.SOVEREINGT + 
     "</h2><img src='https://ubukawa.github.io/cartotile_trial/stat_data/graph/1.1.1_Angola.png'>"
   new mapboxgl.Popup()
     .setLngLat(e.lngLat)
